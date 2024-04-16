@@ -1,4 +1,4 @@
-import LiCharts from "../src/index";
+import { MappingDiagram } from "../src/index";
 
 
 const treeInit = [
@@ -60,11 +60,11 @@ const mapInit = {
 const canvas = document.createElement('canvas')
 canvas.style.width = '640px'
 canvas.style.height = '360px'
-
-
 document.body.appendChild(canvas)
 
-const liCharts = new LiCharts(
+const { width, height } = canvas.getBoundingClientRect()
+
+const instance = new MappingDiagram(
   canvas, 
   listInit, 
   treeInit, 
@@ -72,15 +72,17 @@ const liCharts = new LiCharts(
   {
     width: 640,
     height: 360
+    // width,
+    // height
   }
 )
 
-liCharts.mounted()
+instance.mounted()
 
 const btn = document.createElement('button')
 btn.innerHTML = 'get Map'
 
 btn.addEventListener('click', () => {
-  console.log(liCharts)
+  console.log(instance)
 })
 document.body.appendChild(btn)

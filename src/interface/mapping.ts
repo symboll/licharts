@@ -28,16 +28,26 @@ export interface Options {
   height: number,
   background?: string,
   color?: string,
-  line_x_position?: number,
-  line_x_gap?: number, 
-  line_y_gap?: number,
-  card_width?: number, 
-  card_height?: number
 }
- 
+
+// export interface RequiredOptions {
+//   width: number,
+//   height: number,
+// }
+
 export interface Point {
   dx: number,
   dy: number
+}
+
+export interface Rectangle extends Point{
+  width: number,
+  height: number
+}
+
+export interface Config {
+  color: string,
+  rectangle: Rectangle,
 }
 
 export interface MousePoint {
@@ -51,3 +61,5 @@ export interface MapStartPointToEndPoints {
     endPointList: Point[]
   }
 }
+
+export type CurrentPointType = 'treeItem' | 'listItem' | ''

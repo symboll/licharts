@@ -1,6 +1,6 @@
 {
   "name": "licharts",
-  "version": "1.0.1",
+  "version": "1.0.7",
   "description": "",
   "main": "dist/licharts.umd.js",
   "module": "dist/licharts.mjs",
